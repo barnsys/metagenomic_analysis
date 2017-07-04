@@ -253,6 +253,8 @@ total_trimm <- function(file_q, file_f, file_trem, pas_m, qs, dp)
   
  }
 
+#Example of using functions
+
 #connecting the necessary library
 
 library(ShortRead)
@@ -261,15 +263,13 @@ library(ShortRead)
 setwd("/home/my_data/")
 
 #visualization of reading quality
-plot_quality(file_q="4.fastq", file_f="4.fasta", qs=20, dp=0.1)
+plot_quality(file_q="example_data.fastq", file_f="example_data.fasta", qs=20, dp=0.1)
 
 #removed sequences with poor start and end quality
-begin_end_trimm(file_q="4.fastq", file_f="4.fasta", file_trem="test.fasta", qs=37, begin_lt=60, end_lt=0)
+begin_end_trimm(file_q="example_data.fastq", file_f="example_data.fasta", file_trem="intermediate_result.fasta", qs=37, begin_lt=60, end_lt=0)
 
 #visualization of reading quality after removing the sequences
-plot_quality(file_q="4.fastq", file_f="test.fasta", qs=20, dp=0.1)
+plot_quality(file_q="example_data.fastq", file_f="intermediate_result.fasta", qs=20, dp=0.1)
 
 #removed positional from the alignment under the given conditions of the trimming
-total_trimm(file_q="4.fastq", file_f="test.fasta", file_trem="trem.fasta", qs=20, dp=0.1)
-
-
+total_trimm(file_q="example_data.fastq", file_f="intermediate_result.fasta", file_trem="example_trem.fasta", qs=20, dp=0.1)
